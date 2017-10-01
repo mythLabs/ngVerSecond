@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {FormsModule} from '@angular/forms';
+
 import { AppComponent } from './app.component';
 
 import {HeaderComponent} from './header/header.component';
@@ -17,15 +19,17 @@ import {AppRoutingmodule} from './app-routing.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
+import {ShoppingListService} from './shopping-list/Shoppling-list.service';
+
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent,
      RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, DropdownDirective, RecipeStartComponent, RecipeEditComponent
   ],
   imports: [
-    BrowserModule, AppRoutingmodule
+    BrowserModule, AppRoutingmodule, FormsModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
